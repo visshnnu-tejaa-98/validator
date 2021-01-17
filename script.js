@@ -33,7 +33,7 @@ button.addEventListener("click",function(e){
     // console.log(inputCountry.value)
     // console.log(inputMobile.value)
     async function getData(){
-        let apiemailResponse = await fetch(`https://apilayer.net/api/check?access_key=8aad99f6ef0f0daf1357fcd550f5c8a0&email=${inputEmail.value}&smtp=1&format=1`)
+        let apiemailResponse = await fetch(`http://apilayer.net/api/check?access_key=8aad99f6ef0f0daf1357fcd550f5c8a0&email=${inputEmail.value}&smtp=1&format=1`)
         let apiemailData = await apiemailResponse.json()
         let emailStatus;
         if(apiemailData.format_valid===true && apiemailData.mx_found===true && apiemailData.smtp_check===true){
@@ -42,7 +42,7 @@ button.addEventListener("click",function(e){
             emailStatus = false
         }
         // console.log(apiemailData)
-        let apiMobileResponse = await fetch(`https://apilayer.net/api/validate?access_key=3b0839cb885371c57b9fcdd9a6c0e31d&number=${inputMobile.value}&country_code=${inputCountry.value}`)
+        let apiMobileResponse = await fetch(`http://apilayer.net/api/validate?access_key=3b0839cb885371c57b9fcdd9a6c0e31d&number=${inputMobile.value}&country_code=${inputCountry.value}`)
         let apiMobileData = await apiMobileResponse.json()
         let mobileStatus = apiMobileData.valid
         console.log(mobileStatus)
