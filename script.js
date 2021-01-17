@@ -58,6 +58,9 @@ button.addEventListener("click",function(e){
         }else if(emailStatus===false && mobileStatus){
             result.classList.add("text-danger")
             result.innerHTML = "Mobile Valid but not Email"
+        }else{
+            result.classList.add("text-danger")
+            result.innerHTML = "Both Email and Mobile are not Valid"
         }
         
         email.innerHTML = inputEmail.value
